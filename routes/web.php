@@ -1,7 +1,11 @@
 <?php
 
+use app\Http\Controllers\RoomController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+Route::resource('rooms', RoomController::class)->middleware('auth');
